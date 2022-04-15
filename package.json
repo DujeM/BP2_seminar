@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
+    "mssql": "^8.1.0",
+    "nvm": "0.0.4",
     "tedious": "^14.4.0"
   }
 }
