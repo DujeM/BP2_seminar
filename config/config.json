@@ -1,0 +1,15 @@
+{
+    "server": "localhost",
+    "authentication": {
+        "type": "default",
+        "options": {
+            "userName": "admin", 
+            "password": "Admin12345"
+        }
+    },
+    "options": {
+        "database": "PcShop",
+        "validateBulkLoadParameters":false,
+        "encrypt": false
+    }
+}
