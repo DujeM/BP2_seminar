@@ -12,8 +12,6 @@ export class ComponentService {
 
 
   getComponents() {
-    this.httpClient.get('http://localhost:3000/api/components/').subscribe(res => {
-      console.log(res)
-    });
+    return this.httpClient.get('http://localhost:3000/api/components/');
   }
 }

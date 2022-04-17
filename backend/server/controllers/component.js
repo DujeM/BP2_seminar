@@ -10,10 +10,10 @@ module.exports = {
     
             var request = new sql.Request();
                
-            request.query('SELECT * FROM Customers', function (err, recordset) {
+            request.query('SELECT * FROM Component', function (err, recordset) {
                 if (err) console.log(err)
 
-                res.send(recordset);  
+                res.send(recordset.recordset);  
             });
     
         });

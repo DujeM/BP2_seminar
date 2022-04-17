@@ -7,13 +7,21 @@ import { ComponentService } from 'src/app/services/component.service';
   styleUrls: ['./component.component.scss']
 })
 export class ComponentComponent implements OnInit {
+  displayedColumns: string[] = ['ComponentId', 'Name', 'Price'];
+  dataSource: any;
 
   constructor(
     private componentService: ComponentService
   ) { }
 
   ngOnInit(): void {
-    this.componentService.getComponents();
+    this.getAllComponents();
+  }
+
+  getAllComponents() {
+    this.componentService.getComponents().subscribe(res => {
+      this.dataSource = res;
+    })
   }
 
 }
