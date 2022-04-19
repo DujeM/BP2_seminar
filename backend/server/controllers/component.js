@@ -13,7 +13,7 @@ module.exports = {
             request.query('SELECT * FROM Component', function (err, recordset) {
                 if (err) console.log(err)
 
-                res.send(recordset);  
+                res.send(recordset.recordset);  
             });
     
         });
