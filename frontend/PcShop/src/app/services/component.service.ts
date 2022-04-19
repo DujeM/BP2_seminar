@@ -14,4 +14,8 @@ export class ComponentService {
   getComponents() {
     return this.httpClient.get('http://localhost:3000/api/components/');
   }
+
+  createComponent(newCompnent: any) {
+    return this.httpClient.post('http://localhost:3000/api/components/new', newCompnent);
+  }
 }

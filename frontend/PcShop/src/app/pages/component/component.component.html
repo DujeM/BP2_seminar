@@ -33,8 +33,18 @@
     <br>
 
     <div>
-      <button mat-raised-button color = "warn">Add item</button>
+      <button mat-raised-button color="warn">Add item</button>
       <div class = "divider"></div>
-      <button mat-raised-button color = "warn">Find primary key</button>
+      <button mat-raised-button color="warn">Find primary key</button>
+    </div>
+
+    <div>
+      <p>New Component</p>
+      <input type="text" placeholder="Name" [(ngModel)]="newComponent.name">
+      <input type="text" placeholder="Price" [(ngModel)]="newComponent.price">
+      <select name="" id="">
+        <option *ngFor="let company of companies" value="{{ company.id }}">{{ company.name }}</option>
+      </select>
+      <button mat-raised-button color="success" (click)="createComponent()">Save</button>
     </div>
   </div>
