@@ -10,7 +10,7 @@ module.exports = {
     
             var request = new sql.Request();
                
-            request.query('SELECT * FROM Component', function (err, recordset) {
+            request.query('SELECT * FROM Customer', function (err, recordset) {
                 if (err) console.log(err)
 
                 res.send(recordset);  
@@ -27,12 +27,12 @@ module.exports = {
             if (err) console.log(err);
     
             var request = new sql.Request();
-            request.input('Name', sql.NVarChar(50), req.body.Name)
-            .input('Manufacturer', sql.NVarChar(50), req.body.Manufacturer)
-            .input('Price', sql.Int, req.body.Price)
+            request.input('FullName', sql.NVarChar(50), req.body.Name)
+            .input('Location', sql.NVarChar(50), req.body.Location)
+            .input('Email', sql.NVarChar(50), req.body.Email)
             .query(
-            'INSERT INTO Component (Manufacturer, Name, Price)' +
-            `VALUES (@Manufacturer, @Name, @Price);`, 
+            'INSERT INTO Customer (FullName, Location, Email)' +
+            `VALUES (@FullName, @Location, @Email);`, 
             function (err, recordset) {
                 if (err) console.log(err)
 
@@ -49,8 +49,8 @@ module.exports = {
             if (err) console.log(err);
     
             var request = new sql.Request();
-            request.input('ComponentId', sql.Int, req.params.ComponentId)
-            .query('DELETE from Component where ComponentId=@ComponentId',
+            request.input('CustomerId', sql.Int, req.params.CustomerId)
+            .query('DELETE from Customer where CustomerId=@CustomerId',
             function (err, recordset) {
                 if (err) console.log(err)
 

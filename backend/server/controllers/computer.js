@@ -2,7 +2,6 @@ module.exports = {
     get(req, res) {
         var sql = require("mssql");
         var config = require("../../config/config");
-        // config for your database
 
         sql.connect(config, function (err) {
         
@@ -10,7 +9,7 @@ module.exports = {
     
             var request = new sql.Request();
                
-            request.query('SELECT * FROM Component', function (err, recordset) {
+            request.query('SELECT * FROM Computer', function (err, recordset) {
                 if (err) console.log(err)
 
                 res.send(recordset);  
@@ -27,12 +26,11 @@ module.exports = {
             if (err) console.log(err);
     
             var request = new sql.Request();
-            request.input('Name', sql.NVarChar(50), req.body.Name)
-            .input('Manufacturer', sql.NVarChar(50), req.body.Manufacturer)
-            .input('Price', sql.Int, req.body.Price)
+            request.input('Components', sql.Int, req.body.Components)
+            .input('TotalPrice', sql.Int, req.body.TotalPrice)
             .query(
-            'INSERT INTO Component (Manufacturer, Name, Price)' +
-            `VALUES (@Manufacturer, @Name, @Price);`, 
+            'INSERT INTO Computer (Components, TotalPrice)' +
+            `VALUES (@Components, @TotalPrice);`, 
             function (err, recordset) {
                 if (err) console.log(err)
 
@@ -49,8 +47,8 @@ module.exports = {
             if (err) console.log(err);
     
             var request = new sql.Request();
-            request.input('ComponentId', sql.Int, req.params.ComponentId)
-            .query('DELETE from Component where ComponentId=@ComponentId',
+            request.input('ComputerId', sql.Int, req.params.ComputerId)
+            .query('DELETE from Computer where ComputerId=@ComputerId',
             function (err, recordset) {
                 if (err) console.log(err)
 
