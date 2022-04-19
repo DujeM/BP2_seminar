@@ -12,7 +12,7 @@ module.exports = {
             request.query('SELECT * FROM Company', function (err, recordset) {
                 if (err) console.log(err)
 
-                res.send(recordset);  
+                res.send(recordset.recordset);  
             });
     
         });

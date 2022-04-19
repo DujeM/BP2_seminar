@@ -14,7 +14,7 @@ export class ComponentComponent implements OnInit {
   newComponent = {
     name: '',
     price: '',
-    companyId: 0
+    CompanyId: 0
   }
   constructor(
     private componentService: ComponentService,
@@ -41,6 +41,7 @@ export class ComponentComponent implements OnInit {
   createComponent() {
     console.log(this.newComponent)
     this.componentService.createComponent(this.newComponent);
+    this.newComponent.CompanyId++;
   }
 
 }
