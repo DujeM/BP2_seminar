@@ -40,11 +40,11 @@
 
     <div>
       <p>New Component</p>
-      <input type="text" placeholder="Name" [(ngModel)]="newComponent.name">
-      <input type="text" placeholder="Price" [(ngModel)]="newComponent.price">
+      <input type="text" placeholder="Name" [(ngModel)]="newComponent.Name">
+      <input type="text" placeholder="Price" [(ngModel)]="newComponent.Price">
       <select name="" id="">
         <option *ngFor="let company of companies" value="{{ company.Name }}">{{ company.Name }}</option>
       </select>
-      <button mat-raised-button color="success" (click)="createComponent()">Save</button>
+      <button mat-raised-button color="success" (click)="postComponent()">Save</button>
     </div>
   </div>

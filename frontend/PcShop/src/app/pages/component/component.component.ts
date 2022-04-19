@@ -12,13 +12,13 @@ export class ComponentComponent implements OnInit {
   components: any;
   companies: any;
   newComponent = {
-    name: '',
-    price: '',
-    CompanyId: 0
+    Name: '',
+    Price: '',
+    ComponentId: 0
   }
   constructor(
     private componentService: ComponentService,
-    private companyService: CompanyService
+    private companyService: CompanyService,
   ) { }
 
   ngOnInit(): void {
@@ -38,10 +38,11 @@ export class ComponentComponent implements OnInit {
     });
   }
 
-  createComponent() {
-    this.componentService.createComponent(this.newComponent);
-    console.log(this.newComponent);
-    this.newComponent.CompanyId++;
+  postComponent() {
+    this.componentService.createComponent(this.newComponent).subscribe((res: any) => {
+      this.newComponent = res;
+      console.log(res);
+    });
+    this.newComponent.ComponentId++;
   }
-
 }
