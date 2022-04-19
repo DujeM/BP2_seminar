@@ -9,7 +9,7 @@ import { ComponentService } from 'src/app/services/component.service';
 })
 export class ComponentComponent implements OnInit {
   displayedColumns: string[] = ['ComponentId', 'Manufacturer', 'Name', 'Hardware', 'Price'];
-  dataSource: any;
+  components: any;
   companies: any;
   newComponent = {
     name: '',
@@ -28,19 +28,19 @@ export class ComponentComponent implements OnInit {
 
   getAllComponents() {
     this.componentService.getComponents().subscribe(res => {
-      this.dataSource = res;
+      this.components = res;
     });
   }
 
   getAllCompanies() {
     this.companyService.getCompanies().subscribe((res: any) => {
-      this.companies = res.recordset;
+      this.companies = res;
     });
   }
 
   createComponent() {
-    console.log(this.newComponent)
     this.componentService.createComponent(this.newComponent);
+    console.log(this.newComponent);
     this.newComponent.CompanyId++;
   }
 
