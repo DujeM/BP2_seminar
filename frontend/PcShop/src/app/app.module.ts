@@ -9,6 +9,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ComponentComponent } from './pages/component/component.component';
 import { ComponentService } from './services/component.service';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MatTableModule } from '@angular/material/table';
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [ComponentService],
   bootstrap: [AppComponent]

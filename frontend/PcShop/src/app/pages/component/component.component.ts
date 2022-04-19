@@ -7,7 +7,7 @@ import { ComponentService } from 'src/app/services/component.service';
   styleUrls: ['./component.component.scss']
 })
 export class ComponentComponent implements OnInit {
-  displayedColumns: string[] = ['ComponentId', 'Name', 'Price'];
+  displayedColumns: string[] = ['ComponentId', 'Manufacturer', 'Name', 'Hardware', 'Price'];
   dataSource: any;
 
   constructor(
@@ -22,6 +22,10 @@ export class ComponentComponent implements OnInit {
     this.componentService.getComponents().subscribe(res => {
       this.dataSource = res;
     })
+  }
+
+  insertInto() {
+    
   }
 
 }
