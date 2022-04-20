@@ -1,6 +1,6 @@
 <div class = "wrapper">
     <br><br><br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="companies" class="mat-elevation-z8">
         <ng-container matColumnDef="CompanyId">
           <th mat-header-cell *matHeaderCellDef> No. </th>
           <td mat-cell *matCellDef="let element"> {{element.CompanyId}} </td>
@@ -19,11 +19,6 @@
         <ng-container matColumnDef="Location">
           <th mat-header-cell *matHeaderCellDef> Location </th>
           <td mat-cell *matCellDef="let element"> {{element.Location}} </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="CompanyOib">
-          <th mat-header-cell *matHeaderCellDef> OIB </th>
-          <td mat-cell *matCellDef="let element"> {{element.CompanyOib}} </td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

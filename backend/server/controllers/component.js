@@ -28,11 +28,10 @@ module.exports = {
     
             var request = new sql.Request();
             request.input('Name', sql.NVarChar(50), req.body.Name)
-            .input('Hardware', sql.NVarChar(50), req.body.Hardware)
             .input('Price', sql.Int, req.body.Price)
             .query(
-            'INSERT INTO Component (Name, Hardware, Price)' +
-            `VALUES (@Name, @Hardware, @Price);`, 
+            'INSERT INTO Component (Name, Price)' +
+            `VALUES (@Name, @Price);`, 
             function (err, recordset) {
                 if (err) console.log(err)
 

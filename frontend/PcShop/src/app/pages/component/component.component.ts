@@ -8,7 +8,7 @@ import { ComponentService } from 'src/app/services/component.service';
   styleUrls: ['./component.component.scss']
 })
 export class ComponentComponent implements OnInit {
-  displayedColumns: string[] = ['ComponentId', 'Manufacturer', 'Name', 'Hardware', 'Price'];
+  displayedColumns: string[] = ['ComponentId', 'Manufacturer', 'Name', 'Price'];
   components: any;
   companies: any;
   newComponent = {
